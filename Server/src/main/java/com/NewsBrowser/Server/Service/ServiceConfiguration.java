@@ -11,4 +11,5 @@ public class ServiceConfiguration {
 	RestTemplate restTemplate() {
 		return new RestTemplate();
 	}
+	
 }

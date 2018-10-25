@@ -15,7 +15,7 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	
 	@Inject
 	RestTemplate restTemplate;
-	
+		
 	private String url;
 	private final String APIKEY = "dc98f2c2ddfe44d0b8102025c394cd08";
 	
