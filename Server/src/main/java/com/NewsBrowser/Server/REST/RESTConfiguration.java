@@ -4,7 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.NewsBrowser.Server.Service.NewsAPINewsFetcher;
-import com.NewsBrowser.Server.Service.NewsAPIValidator;
+import com.NewsBrowser.Server.Service.NewsAPIUserInputValidator;
 
 @Configuration
 public class RESTConfiguration {
@@ -15,8 +15,8 @@ public class RESTConfiguration {
 	}
 
 	@Bean
-	NewsAPIValidator newsAPIValidator() {
-		return new NewsAPIValidator();
+	NewsAPIUserInputValidator newsAPIValidator() {
+		return new NewsAPIUserInputValidator();
 	}
 
 }

@@ -6,13 +6,13 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.NewsBrowser.Server.Service.NewsAPINewsFetcher;
-import com.NewsBrowser.Server.Service.NewsAPIValidator;
+import com.NewsBrowser.Server.Service.NewsAPIUserInputValidator;
 
 @RestController
 public class RESTController {
 	
 	@Inject
-	NewsAPIValidator newsAPIValidator;
+	NewsAPIUserInputValidator newsAPIValidator;
 	
 	@Inject
 	NewsAPINewsFetcher newsAPINewsFetcher;

@@ -6,7 +6,7 @@ package com.NewsBrowser.Server.Service;
  * @author MJazy
  *
  */
-public interface ValidatorInterface {
+public interface UserInputValidatorInterface {
 	
 	/**
 	 * Validates user input.

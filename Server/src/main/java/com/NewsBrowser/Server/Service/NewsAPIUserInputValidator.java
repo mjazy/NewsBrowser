@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
-public class NewsAPIValidator implements ValidatorInterface{
+public class NewsAPIUserInputValidator implements UserInputValidatorInterface{
 
 	private final Set<String> supportedCountries = new HashSet<>(Arrays.asList("pl"));
 	private final Set<String> supportedCategories = new HashSet<>(Arrays.asList("business", "entertainment", "general", "health", "science", "sports", "technology")); 
