@@ -26,9 +26,7 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	NewsAPILogAdder newsAPILogAdder;
 	
 	
-	private String url;
-	private final String APIKEY = "dc98f2c2ddfe44d0b8102025c394cd08";
-	
+
 
 	/**
 	 * Related to creation of ResponseEntity.
@@ -42,9 +40,8 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 		
 	
 	@Override
-	public String fetchNews(String country, String category) {
-		setFetchNewsUrl(country, category);
-		ResponseEntity<String> responseEntity = restTemplate.exchange(this.url, HttpMethod.GET, httpEntity(), String.class);
+	public String fetchNews(String url) {
+		ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, httpEntity(), String.class);
 		
 		if (newsAPILoggingValidator.shouldDebugLogBeAdded(responseEntity) == true) {
 			newsAPILogAdder.addDebugLog(responseEntity);
@@ -55,17 +52,6 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 		
 		String responseBody = responseEntity.getBody();
 		return responseBody;
-	}
-
-	
-
-	/**
-	 * Sets URL which can be used to send GET request related to fetching news.
-	 * @param country should be supplied in ISO 3166-1 code e.g. "pl".
-	 * @param category should be one of "business, entertainment, general, health, science, sports, technology".
-	 */ 
-	private void setFetchNewsUrl(String country, String category) {
-		this.url = String.format("https://newsapi.org/v2/top-headlines?country=%s&category=%s&apiKey=%s", country, category, this.APIKEY);
 	}
 	
 	

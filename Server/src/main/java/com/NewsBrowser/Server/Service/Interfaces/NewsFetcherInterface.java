@@ -12,10 +12,9 @@ public interface NewsFetcherInterface {
 	
 	/**
 	 * Gets data from news provider.
-	 * @param country represents country to which news should be related (e.g. Poland).
-	 * @param category represents category to which news should be related (e.g. Technology). 
+	 * @param url represents relevant URL prepared service implementing URLPreparatorInterface. 
 	 * @return relevant response body from news provider.
 	 */
-	String fetchNews(String country, String category);
+	String fetchNews(String url);
 		
 }
