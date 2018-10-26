@@ -27,5 +27,8 @@ public class ServiceConfiguration {
 		return new NewsAPILoggingValidator();
 	}
 	
-	
+	@Bean
+	NewsAPILogAdder newsAPILogAdder() {
+		return new NewsAPILogAdder();
+	}	
 }

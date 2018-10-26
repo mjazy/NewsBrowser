@@ -3,7 +3,7 @@ package com.NewsBrowser.Server.Service;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import org.slf4j.Logger;
+
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpHeaders;
 import org.springframework.http.HttpMethod;
@@ -21,7 +21,7 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	NewsAPILoggingValidator newsAPILoggingValidator;
 	
 	@Inject
-	Logger logger;
+	NewsAPILogAdder newsAPILogAdder;
 	
 	
 	private String url;
@@ -44,11 +44,11 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 		setFetchNewsUrl(country, category);
 		ResponseEntity<String> responseEntity = restTemplate.exchange(this.url, HttpMethod.GET, httpEntity(), String.class);
 		
-		if(newsAPILoggingValidator.shouldDebugLogBeAdded(responseEntity) == true) {
-			logger.debug("{} {}", responseEntity.getStatusCode(), responseEntity.getBody());		
+		if (newsAPILoggingValidator.shouldDebugLogBeAdded(responseEntity) == true) {
+			newsAPILogAdder.addDebugLog(responseEntity);
 		}
 		else if (newsAPILoggingValidator.shouldErrorLogBeAdded(responseEntity) == true) {
-			logger.error("{} {}", responseEntity.getStatusCode(), responseEntity.getBody());		
+			newsAPILogAdder.addErrorLog(responseEntity);
 		}
 		
 		String responseBody = responseEntity.getBody();
