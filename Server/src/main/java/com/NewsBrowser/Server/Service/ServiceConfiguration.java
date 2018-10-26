@@ -8,6 +8,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.web.client.RestTemplate;
 
+import com.NewsBrowser.Server.Service.NewsAPI.NewsAPILogAdder;
+import com.NewsBrowser.Server.Service.NewsAPI.NewsAPILoggingValidator;
+
 @Configuration
 public class ServiceConfiguration {
 

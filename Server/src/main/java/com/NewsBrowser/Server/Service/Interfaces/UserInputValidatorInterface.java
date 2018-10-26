@@ -1,4 +1,4 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.Interfaces;
 
 
 /**

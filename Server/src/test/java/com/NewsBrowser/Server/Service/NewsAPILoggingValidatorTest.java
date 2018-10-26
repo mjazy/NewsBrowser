@@ -11,6 +11,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.test.context.junit4.SpringRunner;
 
+import com.NewsBrowser.Server.Service.NewsAPI.NewsAPILoggingValidator;
+
 @RunWith(SpringRunner.class)
 @SpringBootTest
 public class NewsAPILoggingValidatorTest {

@@ -1,4 +1,4 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.NewsAPI;
 
 import javax.inject.Inject;
 import javax.inject.Named;
@@ -10,6 +10,8 @@ import org.springframework.http.HttpMethod;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.client.RestTemplate;
+
+import com.NewsBrowser.Server.Service.Interfaces.NewsFetcherInterface;
 
 @Named
 public class NewsAPINewsFetcher implements NewsFetcherInterface {

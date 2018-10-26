@@ -1,9 +1,11 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.NewsAPI;
 
 import javax.inject.Inject;
 
 import org.slf4j.Logger;
 import org.springframework.http.ResponseEntity;
+
+import com.NewsBrowser.Server.Service.Interfaces.LogAdderInterface;
 
 public class NewsAPILogAdder implements LogAdderInterface{
 

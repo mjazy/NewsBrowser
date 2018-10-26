@@ -1,7 +1,9 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.NewsAPI;
 
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
+
+import com.NewsBrowser.Server.Service.Interfaces.LoggingValidatorInterface;
 
 
 public class NewsAPILoggingValidator implements LoggingValidatorInterface {

@@ -1,8 +1,10 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.NewsAPI;
 
 import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
+
+import com.NewsBrowser.Server.Service.Interfaces.UserInputValidatorInterface;
 
 public class NewsAPIUserInputValidator implements UserInputValidatorInterface{
 
