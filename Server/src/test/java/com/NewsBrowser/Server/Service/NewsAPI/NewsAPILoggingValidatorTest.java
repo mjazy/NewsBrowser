@@ -1,4 +1,4 @@
-package com.NewsBrowser.Server.Service;
+package com.NewsBrowser.Server.Service.NewsAPI;
 
 import static org.junit.Assert.*;
 
