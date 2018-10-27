@@ -1,7 +1,5 @@
 package com.NewsBrowser.Server.Domain;
 
-import java.text.DateFormat;
-import java.text.SimpleDateFormat;
 import java.util.Date;
 
 import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIArticle;
@@ -13,6 +11,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
  *
  */
 public class RequirementsCompliantArticle {
+	
 	
 
 	@JsonProperty
@@ -36,6 +35,9 @@ public class RequirementsCompliantArticle {
 	@JsonProperty
 	private String imageUrl;
 	
+	private static final DateFormatter dateFormatter = new DateFormatter();;
+	private static final String requirementsCompliantDateFormat = "yyyy-MM-dd";
+	
 	
 	/**
 	 * Constructor to be used to process NewsAPIFetchNewsResponseData to client requirements compliant format.
@@ -50,10 +52,12 @@ public class RequirementsCompliantArticle {
 	RequirementsCompliantArticle(NewsAPIArticle newsAPIArticle){
 		this.author = newsAPIArticle.getAuthor();
 		this.title = newsAPIArticle.getTitle();
-		this.description = newsAPIArticle.getDescription();
-
-		this.date = formatDate(newsAPIArticle.getPublishedAt());
-
+		this.description = newsAPIArticle.getDescription();	
+		
+		if(newsAPIArticle.getPublishedAt() != null) {
+			this.date = dateFormatter.formatDate(requirementsCompliantDateFormat, newsAPIArticle.getPublishedAt());
+		}
+		this.setDate(newsAPIArticle.getPublishedAt());
 		this.sourceName = newsAPIArticle.getSource().getName();
 		this.articleUrl = newsAPIArticle.getUrl();
 		this.imageUrl = newsAPIArticle.getUrlToImage();
@@ -74,6 +78,14 @@ public class RequirementsCompliantArticle {
 	
 	public String getDate() {
 		return date;
+	}
+	
+	private void setDate(Date date) {
+		if (date != null) {
+			this.date = dateFormatter.formatDate(requirementsCompliantDateFormat, date);			
+		}
+
+		
 	}
 	
 	public String getSourceName() {
@@ -97,10 +109,4 @@ public class RequirementsCompliantArticle {
 		return string;
 	}
 	
-	private String formatDate(Date date) {
-		DateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
-		String formattedDateString = dateFormat.format(date);
-		return formattedDateString;
-	}
-
 }
