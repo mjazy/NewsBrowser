@@ -1,5 +1,7 @@
 package com.NewsBrowser.Server.Domain.NewsAPI;
 
+import java.util.Date;
+
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 public class NewsAPIArticle {
@@ -23,13 +25,13 @@ public class NewsAPIArticle {
 	private String urlToImage;
 	
 	@JsonProperty
-	private String publishedAt;
+	private Date publishedAt;
 	
 	@JsonProperty
 	private String content;
 	
 	public NewsAPIArticle(NewsAPISource source, String author, String title, String description, String url, 
-			String urlToImage, String publishedAt, String content) {
+			String urlToImage, Date publishedAt, String content) {
 		this.source = source;
 		this.author = author;
 		this.title = title;
@@ -64,7 +66,7 @@ public class NewsAPIArticle {
 		return urlToImage;
 	}
 	
-	public String getPublishedAt() {
+	public Date getPublishedAt() {
 		return publishedAt;
 	}
 	
@@ -77,7 +79,7 @@ public class NewsAPIArticle {
 		String string = String.format("source: '%s', author: '%s', title: '%s', description: '%s',"
 				+ " url: '%s', urlToImage: '%s', publishedAt: '%s', content: '%s'",
 				this.getSource(), this.getAuthor(), this.getTitle(), this.getDescription(),
-				this.getUrl(), this.getUrlToImage(), this.getPublishedAt(), this.getContent());
+				this.getUrl(), this.getUrlToImage(), this.getPublishedAt().toString(), this.getContent());
 		return string;
 	}
 	

@@ -5,6 +5,8 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPISource;
+
 public class NewsAPISourceTest {
 
 	NewsAPISource newsAPISource;
