@@ -30,6 +30,9 @@ public class NewsAPIArticle {
 	@JsonProperty
 	private String content;
 	
+	public NewsAPIArticle() {
+	};
+	
 	public NewsAPIArticle(NewsAPISource source, String author, String title, String description, String url, 
 			String urlToImage, Date publishedAt, String content) {
 		this.source = source;

@@ -4,6 +4,7 @@ import org.springframework.http.ResponseEntity;
 
 /**
  * Represents service facilitating testable determining if logs of particular level should be added.
+ * Logging exceptions shouldn't be validated.
  * @author MJazy
  *
  */

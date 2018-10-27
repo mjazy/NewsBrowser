@@ -4,6 +4,7 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPINewsFetcher;
+import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIResponseParser;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIURLPreparator;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIUserInputValidator;
 
@@ -25,4 +26,10 @@ public class RESTConfiguration {
 		return new NewsAPIUserInputValidator();
 	}
 
+	@Bean
+	NewsAPIResponseParser newsAPIResponseParser() {
+		return new NewsAPIResponseParser();
+	}
+
+	
 }

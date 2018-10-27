@@ -17,6 +17,8 @@ public class NewsAPIFetchNewsResponse {
 	@JsonProperty
 	private List<NewsAPIArticle> articles;
 	
+	public NewsAPIFetchNewsResponse() {};
+	
 	public NewsAPIFetchNewsResponse(String status, String totalResults, List<NewsAPIArticle> articles) {
 		this.status = status;
 		this.totalResults = totalResults;

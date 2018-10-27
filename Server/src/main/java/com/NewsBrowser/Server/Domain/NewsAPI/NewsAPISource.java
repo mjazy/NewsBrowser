@@ -15,6 +15,9 @@ public class NewsAPISource {
 	@JsonProperty
 	private String name;
 
+	public NewsAPISource() {
+	}
+	
 	public NewsAPISource(String id, String name) {
 		this.id = id;
 		this.name = name;
