@@ -28,18 +28,18 @@ public class NewsAPILoggingValidatorTest {
 	
 	
 	@Test
-	public void shouldDebugLogBeAddedTest() {
-		assertEquals(true, newsAPILoggingValidator.shouldDebugLogBeAdded(tooManyRequestsResponseEntity));
-		assertEquals(false, newsAPILoggingValidator.shouldDebugLogBeAdded(okResponseEntity));
-		assertEquals(false, newsAPILoggingValidator.shouldDebugLogBeAdded(badRequestResponseEntity));
+	public void shouldUnsuccessfulRequestDebugLogBeAddedTest() {
+		assertEquals(true, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(tooManyRequestsResponseEntity));
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(okResponseEntity));
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(badRequestResponseEntity));
 
 	}
 	
 	@Test
-	public void shouldErrorLogBeAddedTest() {
-		assertEquals(false, newsAPILoggingValidator.shouldDebugLogBeAdded(tooManyRequestsResponseEntity));
-		assertEquals(false, newsAPILoggingValidator.shouldDebugLogBeAdded(okResponseEntity));
-		assertEquals(true, newsAPILoggingValidator.shouldDebugLogBeAdded(badRequestResponseEntity));
+	public void shouldUnsuccessfulRequestErrorLogBeAddedTest() {
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(tooManyRequestsResponseEntity));
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(okResponseEntity));
+		assertEquals(true, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(badRequestResponseEntity));
 	}
 
 	

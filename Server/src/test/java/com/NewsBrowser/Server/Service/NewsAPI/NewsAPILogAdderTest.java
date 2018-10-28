@@ -25,20 +25,30 @@ public class NewsAPILogAdderTest {
 	
     @Rule
     public final OutputCapture outputCapture = new OutputCapture();
+    
+ 
 	
 	
 	@Test
-	public void errorLoggingTest() {
+	public void addUnsuccessfulRequestErrorLogTest() {
 		ResponseEntity<String> responseEntity = new ResponseEntity<String>("test", HttpStatus.BAD_REQUEST);
-		newsAPILogAdder.addErrorLog(responseEntity);		
+		newsAPILogAdder.addUnsuccessfulRequestErrorLog(responseEntity);		
 		outputCapture.expect(containsString("400 test"));
 	}
 	
 	@Test
-	public void debutLoggingTest() {
+	public void addUnsuccessfulRequestDebugLogTest() {
 		ResponseEntity<String> responseEntity = new ResponseEntity<String>("test", HttpStatus.TOO_MANY_REQUESTS);
-		newsAPILogAdder.addErrorLog(responseEntity);		
+		newsAPILogAdder.addUnsuccessfulRequestErrorLog(responseEntity);		
 		outputCapture.expect(containsString("429 test"));		
 	}
 
+
+	@Test
+	public void addParsingExceptionErrorLogTest() {
+		newsAPILogAdder.addParsingExceptionErrorLog("test");		
+		outputCapture.expect(containsString("Parsing exception has occured: test"));
+	}
+
+	
 }

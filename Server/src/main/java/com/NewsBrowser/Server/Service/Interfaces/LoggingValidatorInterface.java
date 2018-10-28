@@ -14,13 +14,13 @@ public interface LoggingValidatorInterface {
 	 * @param responseEntity with response from Remote API.
 	 * @return true in case responseEntity's status code is different than 'OK' but classified as not a vendor error and is possible to occur e.g. 'TOO_MANY_REQUESTS'.
 	 */
-	boolean shouldDebugLogBeAdded(ResponseEntity<String> responseEntity);
+	boolean shouldUnsuccessfulRequestDebugLogBeAdded(ResponseEntity<String> responseEntity);
 
 	/**
 	 * @param responseEntity with response from Remote API.
 	 * @return true in case responseEntity's status code is different than 'OK' and can be classified as vendor error or other not foreseen error.
 	 */
-	boolean shouldErrorLogBeAdded(ResponseEntity<String> responseEntity);
+	boolean shouldUnsuccessfulRequestErrorLogBeAdded(ResponseEntity<String> responseEntity);
 	
 
 	

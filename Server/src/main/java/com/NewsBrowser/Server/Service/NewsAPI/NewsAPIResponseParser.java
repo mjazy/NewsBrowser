@@ -4,8 +4,6 @@ import java.io.IOException;
 
 import javax.inject.Inject;
 
-import org.slf4j.Logger;
-
 import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIFetchNewsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -17,7 +15,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 public class NewsAPIResponseParser {
 	
 	@Inject
-	Logger logger;
+	NewsAPILogAdder newsAPILogAdder;
 	
 	private ObjectMapper objectMapper;
 	
@@ -35,7 +33,7 @@ public class NewsAPIResponseParser {
 		try {
 			newsAPIFetchNewsResponse = objectMapper.readValue(fetchNewsResponseBody, NewsAPIFetchNewsResponse.class);
 		} catch (IOException exception) {
-			logger.error(exception.getMessage());
+			newsAPILogAdder.addParsingExceptionErrorLog(exception.getMessage());
 		}
 		
 		return newsAPIFetchNewsResponse;

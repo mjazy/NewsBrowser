@@ -43,11 +43,11 @@ public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	public String fetchNews(String url) {
 		ResponseEntity<String> responseEntity = restTemplate.exchange(url, HttpMethod.GET, httpEntity(), String.class);
 		
-		if (newsAPILoggingValidator.shouldDebugLogBeAdded(responseEntity) == true) {
-			newsAPILogAdder.addDebugLog(responseEntity);
+		if (newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(responseEntity) == true) {
+			newsAPILogAdder.addUnsuccessfulRequestDebugLog(responseEntity);
 		}
-		else if (newsAPILoggingValidator.shouldErrorLogBeAdded(responseEntity) == true) {
-			newsAPILogAdder.addErrorLog(responseEntity);
+		else if (newsAPILoggingValidator.shouldUnsuccessfulRequestErrorLogBeAdded(responseEntity) == true) {
+			newsAPILogAdder.addUnsuccessfulRequestErrorLog(responseEntity);
 		}
 		
 		String responseBody = responseEntity.getBody();

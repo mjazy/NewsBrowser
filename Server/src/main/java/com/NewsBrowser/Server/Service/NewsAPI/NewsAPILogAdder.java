@@ -17,7 +17,7 @@ public class NewsAPILogAdder implements LogAdderInterface{
 	 * Should be used in case HTTP status 'TOO_MANY_REQUESTS' is returned.
 	 */
 	@Override
-	public void addDebugLog(ResponseEntity<String> responseEntity) {
+	public void addUnsuccessfulRequestDebugLog(ResponseEntity<String> responseEntity) {
 		logger.debug("{} {}", responseEntity.getStatusCode(), responseEntity.getBody());		
 	}
 
@@ -26,8 +26,15 @@ public class NewsAPILogAdder implements LogAdderInterface{
 	 * Should be used in case HTTP status other than 'OK' or 'TOO_MANY_REQUESTS' is returned.
 	 */
 	@Override
-	public void addErrorLog(ResponseEntity<String> responseEntity) {
+	public void addUnsuccessfulRequestErrorLog(ResponseEntity<String> responseEntity) {
 		logger.error("{} {}", responseEntity.getStatusCode(), responseEntity.getBody());
+		
+	}
+
+
+	@Override
+	public void addParsingExceptionErrorLog(String exceptionMessage) {
+		logger.error("{} {}", "Parsing exception has occured:", exceptionMessage);
 		
 	}
 
