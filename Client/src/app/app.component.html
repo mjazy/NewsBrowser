@@ -12,5 +12,10 @@
     </select><br />
     <br />
     <button (click)="fetchNews(category)" type="submit">Zatwierdź</button>
+  </div>
 </div>
-</div>
+  <hr>
+  <div id="fetchedNewsDiv" style="text-align:left" *ngIf="fetchNewsResponse">
+    <p>Kraj: {{fetchNewsResponse.country}}</p>
+    <p>Kategoria: {{fetchNewsResponse.category}}</p>
+  </div>
