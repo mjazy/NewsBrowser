@@ -18,3 +18,9 @@ interface Article {
   aritlceUrl: string;
   imageUrl: string;
 }
+
+interface News {
+  country: string;
+  category: string;
+  articles: Array<Article>;
+}
