@@ -2,10 +2,14 @@ package com.NewsBrowser.Server.REST;
 
 import javax.inject.Inject;
 
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.NewsBrowser.Server.Domain.News;
+import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIFetchNewsResponse;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPINewsFetcher;
+import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIResponseParser;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIURLPreparator;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIUserInputValidator;
 
@@ -21,23 +25,31 @@ public class RESTController {
 	@Inject
 	NewsAPINewsFetcher newsAPINewsFetcher;
 	
+	@Inject
+	NewsAPIResponseParser newsAPIResponseParser;
 	
-	// Mock-up version allowing basic functionality.
-	@RequestMapping("/")
-	String getRequest() {
+	/**
+	 * Controller for NewsAPI news fetching process.
+	 * @param country should be lower case ISO 3166-1 code. At this moment only "pl" is supported by this application.
+	 * @param category should be one of "business, entertainment, general, health, science, sports, technology". 
+	 * @return News in form compliant with requirements or null in case input is not valid.
+	 */
+	@GetMapping("/news/{country}/{category}/")
+	News newsAPIFetchNews(@PathVariable String country, @PathVariable String category) {
 		
-		String response = null;
+		News response = null;
 		
-		if (newsAPIValidator.isInputValid("pl", "technology")) {
-			String url = newsAPIURLPreparator.prepareFetchNewsUrl("pl", "technology");
-			response = newsAPINewsFetcher.fetchNews(url);			
+		if (newsAPIValidator.isInputValid(country, category) == false) {
+			return response;
 		}
-		else {
-			response = "{ \"error\" : \"Invalid request parameter(s)\" }";
-		}		
+
+		String url = newsAPIURLPreparator.prepareFetchNewsUrl(country, category);
+		String fetchNewsResponseBody = newsAPINewsFetcher.fetchNews(url);
+		NewsAPIFetchNewsResponse newsAPIFetchNewsResponse = newsAPIResponseParser.parseFetchNewsResponse(fetchNewsResponseBody);
 		
+		response = new News(country, category, newsAPIFetchNewsResponse.getArticles());
+
 		return response;
 	}
 	
-
 }
