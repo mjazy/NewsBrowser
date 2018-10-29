@@ -28,7 +28,7 @@ public class NewsAPIResponseParser {
 	 * @param fetchNewsResponseBody 
 	 * @return response body parsed to NewsAPIFetchNewsResponse or null in case of exception.
 	 */
-	NewsAPIFetchNewsResponse parseFetchNewsResponse(String fetchNewsResponseBody){
+	public NewsAPIFetchNewsResponse parseFetchNewsResponse(String fetchNewsResponseBody){
 		NewsAPIFetchNewsResponse newsAPIFetchNewsResponse = null;
 		try {
 			newsAPIFetchNewsResponse = objectMapper.readValue(fetchNewsResponseBody, NewsAPIFetchNewsResponse.class);
