@@ -1,7 +1,7 @@
 <div style="text-align:center">
   <div id="userInputDiv">
     <p>Wybierz odpowiednią kategorię:</p>
-    <select>
+    <select [(ngModel)]="category"> 
       <option value="business">biznes</option>
       <option value="general">ogólne</option>
       <option value="science">nauka</option>
@@ -11,6 +11,6 @@
       <option value="health">zdrowie</option>
     </select><br />
     <br />
-    <button type="submit">Zatwierdź</button>
+    <button (click)="fetchNews(category)" type="submit">Zatwierdź</button>
 </div>
 </div>
