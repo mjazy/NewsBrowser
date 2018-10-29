@@ -1,7 +1,9 @@
 package com.NewsBrowser.Server.Domain;
 
 import java.util.List;
+import java.util.stream.Collectors;
 
+import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIArticle;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
@@ -25,10 +27,10 @@ public class News {
 	 * @param category represents user input's category parameter.
 	 * @param articles represents articles in form compliant with requirements.
 	 */
-	public News(String country, String category, List<RequirementsCompliantArticle> articles) {
+	public News(String country, String category, List<NewsAPIArticle> articles) {
 		this.country = country;
 		this.category = category;
-		this.articles = articles;
+		this.articles = articles.stream().map(article -> new RequirementsCompliantArticle(article)).collect(Collectors.toList());
 	}
 	
 	public String getCountry() {
