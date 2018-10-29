@@ -18,4 +18,29 @@
   <div id="fetchedNewsDiv" style="text-align:left" *ngIf="fetchNewsResponse">
     <p>Kraj: {{fetchNewsResponse.country}}</p>
     <p>Kategoria: {{fetchNewsResponse.category}}</p>
-  </div>
+    <div id="articlesDiv" *ngFor="let article of fetchNewsResponse.articles">
+        <table>
+          <tr>
+            <td>Autor: {{article.author}}</td>
+          </tr>
+          <tr>
+              <td>Tytuł: {{article.title}}</td>
+          </tr>
+          <tr>
+            <td>Opis: {{article.description}}</td>
+          </tr>
+          <tr>
+              <td>Data: {{article.date}}</td>
+          </tr>
+          <tr>
+              <td>Nazwa źródła: {{article.sourceName}}</td>
+          </tr>
+          <tr>
+              <td>Link artykułu: {{article.articleUrl}}</td>
+          </tr>
+          <tr>
+              <td><img src="{{article.imageUrl}}"/></td>
+          </tr>  
+        </table>
+    </div>      
+</div>
