@@ -4,6 +4,7 @@ import static org.junit.Assert.*;
 
 import javax.inject.Inject;
 
+import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.boot.test.context.SpringBootTest;
@@ -20,10 +21,17 @@ public class NewsAPILoggingValidatorTest {
 	@Inject
 	NewsAPILoggingValidator newsAPILoggingValidator;
 
-	ResponseEntity<String> tooManyRequestsResponseEntity = new ResponseEntity<>("Test", HttpStatus.TOO_MANY_REQUESTS); 
-	ResponseEntity<String> okResponseEntity = new ResponseEntity<>("Test", HttpStatus.OK);
-	ResponseEntity<String> badRequestResponseEntity = new ResponseEntity<>("Test", HttpStatus.BAD_REQUEST);
+	ResponseEntity<String> tooManyRequestsResponseEntity; 
+	ResponseEntity<String> okResponseEntity;
+	ResponseEntity<String> badRequestResponseEntity;
 	
+	@Before
+	public void initializeVariables() {
+		tooManyRequestsResponseEntity = new ResponseEntity<>("Test", HttpStatus.TOO_MANY_REQUESTS); 
+		okResponseEntity = new ResponseEntity<>("Test", HttpStatus.OK);
+		badRequestResponseEntity = new ResponseEntity<>("Test", HttpStatus.BAD_REQUEST);
+		
+	}
 	
 	
 	

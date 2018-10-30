@@ -37,7 +37,7 @@ public class NewsTest {
 	}
 	
 	@Test
-	public void test() {
+	public void toStringTest() {
 		assertEquals(newsToStringRelevantValue, news.toString());
 	}
 

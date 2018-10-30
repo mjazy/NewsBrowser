@@ -16,7 +16,7 @@ import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIURLPreparator;
 
 @RunWith(SpringRunner.class)
 @SpringBootTest
-public class NewsAPINewsFetcherTests {
+public class NewsAPINewsFetcherTest {
 
 	
 	@Inject
@@ -29,7 +29,7 @@ public class NewsAPINewsFetcherTests {
 	private String url;
 	
 	@Before
-	public void setURL() {
+	public void initializeVariable() {
 		this.url = newsAPIURLPreparator.prepareFetchNewsUrl("pl", "technology");
 	}
 	

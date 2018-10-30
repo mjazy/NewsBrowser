@@ -16,7 +16,7 @@ public class NewsAPIArticleTest {
 	String newsAPIArticleToStringRelevantValue;
 	
 	@Before
-	public void initializeNewsAPIArticle () {
+	public void initializeVariables () {
 		String testString = "test";
 		Date testDate = new Date();
 		NewsAPISource newsAPISource = new NewsAPISource(testString, testString);

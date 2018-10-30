@@ -12,7 +12,7 @@ public class NewsAPISourceTest {
 	NewsAPISource newsAPISource;
 	
 	@Before
-	public void initializeNewsAPISource () {
+	public void initializeVariable () {
 		newsAPISource = new NewsAPISource("testId", "testName");
 	}
 	
