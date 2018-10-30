@@ -25,7 +25,7 @@ public class NewsAPIResponseParser {
 	
 	/**
 	 * Method used to parse response body related to NewsAPINewsFetcher service.
-	 * @param fetchNewsResponseBody 
+	 * @param fetchNewsResponseBody returned by NewsAPINewsFetcher
 	 * @return response body parsed to NewsAPIFetchNewsResponse or null in case of exception.
 	 */
 	public NewsAPIFetchNewsResponse parseFetchNewsResponse(String fetchNewsResponseBody){
