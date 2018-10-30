@@ -19,7 +19,6 @@ describe('ValidationService', () => {
 
   it('should return true', () => {
     const service: ValidationService = TestBed.get(ValidationService);
-
     expect(service.isCategoryValid('business') === true);
     expect(service.isCategoryValid('general') === true);
     expect(service.isCategoryValid('science') === true);

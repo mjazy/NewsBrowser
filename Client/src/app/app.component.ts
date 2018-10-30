@@ -1,5 +1,6 @@
+import { FetcherService } from './fetcher.service';
+import { ValidationService } from './validation.service';
 import { Component, Inject } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 
 @Component({
@@ -9,31 +10,25 @@ import { HttpClient } from '@angular/common/http';
 })
 
 
+
 export class AppComponent {
   title = 'Client';
   fetchNewsResponse: News;
-  readonly country: String = 'pl';
-
-  fetchNews(category: string) {
-    this.httpClient.get<News>('http://localhost:8080/news/' + this.country + '/' + category + '/')
-    .subscribe(data => this.fetchNewsResponse = data);
-    console.log(this.fetchNewsResponse);
-  }
-
-    // Client side validation function that should occur before sending request to server.
 
 
-  constructor(@Inject('httpClient')private httpClient: HttpClient) {
+    fetchNews(category: string) {
+      if (this.validationService.isCategoryValid(category)) {
+        this.fetcherService.fetchNews(category);
+        this.fetchNewsResponse = this.fetcherService.fetchNewsResponse;
+      }
+    }
+
+  constructor(private validationService: ValidationService, private fetcherService: FetcherService) {
     }
   }
 
 
-
-
-
-
-
-interface Article {
+export interface Article {
   author: string;
   title: string;
   description: string;
@@ -42,7 +37,7 @@ interface Article {
   aritlceUrl: string;
   imageUrl: string;
 }
-interface News {
+export interface News {
   country: string;
   category: string;
   articles: Array<Article>;
