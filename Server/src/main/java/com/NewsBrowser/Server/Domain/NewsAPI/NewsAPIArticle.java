@@ -3,7 +3,11 @@ package com.NewsBrowser.Server.Domain.NewsAPI;
 import java.util.Date;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+/**
+ * Data model representing Article object's structure that may be returned from NewsAPI.
+ * @author MJazy
+ *
+ */
 public class NewsAPIArticle {
 	
 	@JsonProperty

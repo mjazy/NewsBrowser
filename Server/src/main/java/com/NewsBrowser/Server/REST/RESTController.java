@@ -14,6 +14,11 @@ import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIResponseParser;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIURLPreparator;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIUserInputValidator;
 
+/**
+ * Application controller handling process of news fetching service.
+ * @author MJazy
+ *
+ */
 @RestController
 public class RESTController {
 	

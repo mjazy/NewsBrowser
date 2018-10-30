@@ -8,7 +8,7 @@ import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIFetchNewsResponse;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 /**
- * Parsing service for NewsAPI vendor.
+ * Parsing service related to NewsAPI vendor.
  * @author MJazy
  *
  */

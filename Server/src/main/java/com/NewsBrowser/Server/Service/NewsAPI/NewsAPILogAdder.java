@@ -6,7 +6,11 @@ import org.slf4j.Logger;
 import org.springframework.http.ResponseEntity;
 
 import com.NewsBrowser.Server.Service.Interfaces.LogAdderInterface;
-
+/**
+ * Log adding service related to NewsAPI vendor.
+ * @author MJazy
+ *
+ */
 public class NewsAPILogAdder implements LogAdderInterface{
 
 	@Inject

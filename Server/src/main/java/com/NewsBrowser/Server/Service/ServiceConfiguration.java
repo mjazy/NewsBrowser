@@ -11,6 +11,12 @@ import org.springframework.web.client.RestTemplate;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPILogAdder;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPILoggingValidator;
 
+/**
+ * Configuration file that includes beans used by different services.
+ * @author MJazy
+ *
+ */
+
 @Configuration
 public class ServiceConfiguration {
 

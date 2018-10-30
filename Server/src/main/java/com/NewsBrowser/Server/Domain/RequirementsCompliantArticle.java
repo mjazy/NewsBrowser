@@ -6,7 +6,7 @@ import com.NewsBrowser.Server.Domain.NewsAPI.NewsAPIArticle;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Represents article's data model related to client requirements.
+ * Data model representing article's data model related to client requirements.
  * @author MJazy
  *
  */

@@ -2,6 +2,12 @@ package com.NewsBrowser.Server.Service.NewsAPI;
 
 import com.NewsBrowser.Server.Service.Interfaces.URLPreparatorInterface;
 
+/**
+ * Url preparing service related to NewsAPI vendor.
+ * @author MJazy
+ *
+ */
+
 public class NewsAPIURLPreparator implements URLPreparatorInterface{
 	
 	private final String APIKEY;

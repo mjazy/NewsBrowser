@@ -12,7 +12,11 @@ import org.springframework.web.client.RestTemplate;
 
 import com.NewsBrowser.Server.Service.Interfaces.NewsFetcherInterface;
 
-
+/**
+ * News fetching service related to NewsAPI vendor.
+ * @author MJazy
+ *
+ */
 public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	
 	@Inject

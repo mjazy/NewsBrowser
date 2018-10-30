@@ -5,7 +5,11 @@ import org.springframework.http.ResponseEntity;
 
 import com.NewsBrowser.Server.Service.Interfaces.LoggingValidatorInterface;
 
-
+/**
+ * Logging validation service related to NewsAPI vendor.
+ * @author MJazy
+ *
+ */
 public class NewsAPILoggingValidator implements LoggingValidatorInterface {
 
 	

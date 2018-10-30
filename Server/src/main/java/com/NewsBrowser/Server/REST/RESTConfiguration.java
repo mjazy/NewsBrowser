@@ -8,6 +8,11 @@ import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIResponseParser;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIURLPreparator;
 import com.NewsBrowser.Server.Service.NewsAPI.NewsAPIUserInputValidator;
 
+/**
+ *  Configuration file that includes beans used in REST package.
+ * @author MJazy
+ *
+ */
 @Configuration
 public class RESTConfiguration {
 	

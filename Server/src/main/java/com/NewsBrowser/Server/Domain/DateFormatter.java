@@ -5,7 +5,7 @@ import java.util.Date;
 
 
 /**
- * Provides domain service for date formatting.
+ * Domain service for date formatting.
  * @author MJazy
  *
  */

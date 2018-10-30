@@ -6,6 +6,12 @@ import java.util.Set;
 
 import com.NewsBrowser.Server.Service.Interfaces.UserInputValidatorInterface;
 
+/**
+ * User input validating service related to NewsAPI vendor.
+ * @author MJazy
+ *
+ */
+
 public class NewsAPIUserInputValidator implements UserInputValidatorInterface{
 
 	private final Set<String> supportedCountries = new HashSet<>(Arrays.asList("pl"));

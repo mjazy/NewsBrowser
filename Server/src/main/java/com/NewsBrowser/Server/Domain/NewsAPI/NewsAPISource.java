@@ -3,7 +3,7 @@ package com.NewsBrowser.Server.Domain.NewsAPI;
 import com.fasterxml.jackson.annotation.JsonProperty;
 
 /**
- * Data model representing source object that may be included in response from NewsAPI.
+ * Data model representing source object's structure that may be included in response from NewsAPI.
  * @author MJazy
  *
  */
