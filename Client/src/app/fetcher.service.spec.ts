@@ -16,6 +16,7 @@ describe('FetcherService', () => {
     expect(service).toBeTruthy();
   });
 
+  // 
   it('Should have values set', async() => {
     const service: FetcherService = TestBed.get(FetcherService);
     const technologyString = 'technology';

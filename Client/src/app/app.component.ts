@@ -10,7 +10,9 @@ import { Component, Inject } from '@angular/core';
 })
 
 
-
+/**
+ * Application component handling service.
+ */
 export class AppComponent {
   title = 'Client';
   fetchNewsResponse: News;

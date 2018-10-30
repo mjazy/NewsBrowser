@@ -7,7 +7,7 @@ import { News} from './app.component';
 })
 
 /**
- * This class represents data fetching service.
+ * News fetching service.
  * @author MJazy
  */
 @Injectable()
