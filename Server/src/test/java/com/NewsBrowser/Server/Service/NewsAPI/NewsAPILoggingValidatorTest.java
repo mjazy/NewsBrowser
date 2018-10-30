@@ -45,9 +45,9 @@ public class NewsAPILoggingValidatorTest {
 	
 	@Test
 	public void shouldUnsuccessfulRequestErrorLogBeAddedTest() {
-		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(tooManyRequestsResponseEntity));
-		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(okResponseEntity));
-		assertEquals(true, newsAPILoggingValidator.shouldUnsuccessfulRequestDebugLogBeAdded(badRequestResponseEntity));
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestErrorLogBeAdded(tooManyRequestsResponseEntity));
+		assertEquals(false, newsAPILoggingValidator.shouldUnsuccessfulRequestErrorLogBeAdded(okResponseEntity));
+		assertEquals(true, newsAPILoggingValidator.shouldUnsuccessfulRequestErrorLogBeAdded(badRequestResponseEntity));
 	}
 
 	
