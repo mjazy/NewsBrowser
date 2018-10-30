@@ -1,5 +1,5 @@
+import { ValidatorService } from './validator.service';
 import { FetcherService } from './fetcher.service';
-import { ValidationService } from './validation.service';
 import { Component, Inject } from '@angular/core';
 
 
@@ -17,13 +17,13 @@ export class AppComponent {
 
 
     fetchNews(category: string) {
-      if (this.validationService.isCategoryValid(category)) {
+      if (this.validatorService.isCategoryValid(category)) {
         this.fetcherService.fetchNews(category);
         this.fetchNewsResponse = this.fetcherService.fetchNewsResponse;
       }
     }
 
-  constructor(private validationService: ValidationService, private fetcherService: FetcherService) {
+  constructor(private validatorService: ValidatorService, private fetcherService: FetcherService) {
     }
   }
 

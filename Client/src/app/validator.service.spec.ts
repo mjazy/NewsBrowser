@@ -1,24 +1,24 @@
 import { TestBed } from '@angular/core/testing';
 
-import { ValidationService } from './validation.service';
+import { ValidatorService } from './validator.service';
 
-describe('ValidationService', () => {
+describe('ValidatorService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: ValidationService = TestBed.get(ValidationService);
+    const service: ValidatorService = TestBed.get(ValidatorService);
     expect(service).toBeTruthy();
   });
 
   it('should return false', () => {
-    const service: ValidationService = TestBed.get(ValidationService);
+    const service: ValidatorService = TestBed.get(ValidatorService);
     expect(service.isCategoryValid('') === false);
     expect(service.isCategoryValid('test') === false);
     expect(service.isCategoryValid(null) === false);
   });
 
   it('should return true', () => {
-    const service: ValidationService = TestBed.get(ValidationService);
+    const service: ValidatorService = TestBed.get(ValidatorService);
     expect(service.isCategoryValid('business') === true);
     expect(service.isCategoryValid('general') === true);
     expect(service.isCategoryValid('science') === true);
