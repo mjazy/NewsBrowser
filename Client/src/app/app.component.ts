@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import { Component, Inject } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+
 
 @Component({
   selector: 'app-root',
@@ -14,14 +15,15 @@ export class AppComponent {
   readonly country: String = 'pl';
 
   fetchNews(category: string) {
-
     this.httpClient.get<News>('http://localhost:8080/news/' + this.country + '/' + category + '/')
     .subscribe(data => this.fetchNewsResponse = data);
     console.log(this.fetchNewsResponse);
-    }
+  }
+
+    // Client side validation function that should occur before sending request to server.
 
 
-  constructor(private httpClient: HttpClient) {
+  constructor(@Inject('httpClient')private httpClient: HttpClient) {
     }
   }
 
