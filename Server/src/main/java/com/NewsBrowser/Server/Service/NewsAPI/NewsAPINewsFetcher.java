@@ -1,7 +1,6 @@
 package com.NewsBrowser.Server.Service.NewsAPI;
 
 import javax.inject.Inject;
-import javax.inject.Named;
 
 
 import org.springframework.http.HttpEntity;
@@ -13,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import com.NewsBrowser.Server.Service.Interfaces.NewsFetcherInterface;
 
-@Named
+
 public class NewsAPINewsFetcher implements NewsFetcherInterface {
 	
 	@Inject
