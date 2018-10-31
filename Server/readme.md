@@ -1,4 +1,4 @@
-#Endpoint
+# Endpoint
 Server's fetching news service endpoint is at:
 http://localhost:8800/news/{country}/{category}
 
